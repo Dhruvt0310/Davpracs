@@ -1,0 +1,22 @@
+from textblob import TextBlob
+
+# Sample text
+text = "I really love the new design of your website! It's clean and easy to use."
+blob = TextBlob(text)
+
+polarity = blob.sentiment.polarity   # [-1.0, 1.0]
+subjectivity = blob.sentiment.subjectivity   # [0.0, 1.0]
+
+# Classify sentiment
+if polarity > 0:
+    sentiment = "Positive"
+elif polarity < 0:
+    sentiment = "Negative"
+else:
+    sentiment = "Neutral"
+
+# Display results
+print(f"Text: {text}")
+print(f"Polarity: {polarity}")
+print(f"Subjectivity: {subjectivity}")
+print(f"Sentiment: {sentiment}")
