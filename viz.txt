@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv('your_dataset.csv')  # Replace with your file
+print(df.head())
+
+plt.plot(df['your_numerical_column'])
+plt.title('Line Plot')
+plt.show()
+
+plt.hist(df['your_numerical_column'])
+plt.title('Histogram')
+plt.show()
+
+df['your_categorical_column'].value_counts().plot(kind='bar')
+plt.title('Bar Chart')
+plt.show()
+
+plt.scatter(df['numerical_col1'], df['numerical_col2'])
+plt.title('Scatter Plot')
+plt.show()
+
+plt.boxplot(df['your_numerical_column'].dropna())
+plt.title('Boxplot')
+plt.show()
