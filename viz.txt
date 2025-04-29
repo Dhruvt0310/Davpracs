@@ -1,7 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-df = pd.read_csv('your_dataset.csv')  # Replace with your file
+
+df = pd.read_csv('your_dataset.csv')  
 print(df.head())
+print(df.describe())
+print(df.info())
 
 plt.plot(df['your_numerical_column'])
 plt.title('Line Plot')
