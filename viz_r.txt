@@ -1,0 +1,23 @@
+# Load dataset
+df <- read.csv("your_dataset.csv")  # Replace with your CSV filename
+
+# View data
+head(df)
+
+# Line plot
+plot(df$your_numerical_column, type = "l", main = "Line Plot")
+
+# Histogram
+hist(df$your_numerical_column, main = "Histogram")
+
+# Barplot (Categorical)
+barplot(table(df$your_categorical_column), main = "Barplot")
+
+# Scatter plot
+plot(df$numerical_col1, df$numerical_col2, main = "Scatter Plot")
+
+# Boxplot
+boxplot(df$your_numerical_column, main = "Boxplot")
+
+# Pie chart
+pie(table(df$your_categorical_column), main = "Pie Chart")
