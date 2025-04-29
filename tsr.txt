@@ -1,0 +1,3 @@
+data <-read.csv("data.csv")
+decomposed<-decompose(data)
+plot(decomposed)
