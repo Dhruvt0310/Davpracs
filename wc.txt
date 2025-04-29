@@ -1,0 +1,8 @@
+!pip install wordcloud
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+text="I am Swar going Swar Swar may Lisa sixth Lisa Lisa Rubychan Rubychan Lisa Rubychan Rubychan Rubychan to a place where Swar doesnt know. Swar is Rubychan Rubychan"
+
+word = WordCloud().generate(text)
+plt.imshow(word)
+plt.show()
