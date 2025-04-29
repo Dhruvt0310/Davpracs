@@ -1,0 +1,17 @@
+import sklearn as sk
+import pandas as pd 
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score , classification_report
+from sklearn.feature_extraction.text import CountVectorizer
+df = pd.read_csv("emails.csv")
+df.head()
+X_Train,X_Test,Y_Train,Y_Test=train_test_split(df["text"],df["spam"],test_size=0.2,random_state=42)
+vectorizor=CountVectorizer()
+X_Train=vectorizor.fit_transform(X_Train)
+X_Test=vectorizor.transform(X_Test)
+model=MultinomialNB()
+model.fit(X_Train,Y_Train)
+y_pred=model.predict(X_Test)
+print("Accuracy: ",accuracy_score(Y_Test,y_pred))
+print("Report:\n",classification_report(Y_Test,y_pred))
