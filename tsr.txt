@@ -1,3 +1,9 @@
-data <-read.csv("data.csv")
-decomposed<-decompose(data)
-plot(decomposed)
+library(readr)
+library(stats)
+library(graphics)
+
+data <- read_csv("data.csv")
+data$timecol <- as.Date(data$timecol)
+ts_data <- ts(data$valcol, frequency = 12,index=data$timecol) 
+decomposed_data <- decompose(ts_data, type = "additive")
+plot(decomposed_data)
