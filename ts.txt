@@ -1,0 +1,10 @@
+import pandas as pd
+from statsmodels.tsa.seasonal import seasonal_decompose
+import matplotlib.pyplot as plt
+
+data = pd.read_csv("data.csv", index_col='your_time_column', parse_dates=True)
+
+decomposed = seasonal_decompose(data['your_value_column'], model='additive', period=12)
+
+decomposed.plot()
+plt.show()
