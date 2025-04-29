@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.arima.model import ARIMA
+
+df=read_csv("d.csv")
+
+# Fit ARIMA model (p=1, d=1, q=1)
+model = ARIMA(df["X"], order=(1, 1, 1))
+model_fit = model.fit()
+
+# Print summary
+print(model_fit.summary())
+
+# Forecast next 5 values
+forecast = model_fit.forecast(steps=5)
+print("Forecast:", forecast)
+
+# Plot original data and forecast
+plt.plot(series, label='Original')
+plt.plot(range(len(series), len(series)+5), forecast, label='Forecast', color='red')
+plt.legend()
+plt.show()
